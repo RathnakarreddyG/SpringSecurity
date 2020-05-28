@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 //		.csrf().disable().authorizeRequests().antMatchers("/pronix/user_registration").permitAll().and().formLogin();
-				.authorizeRequests().antMatchers("/pronix/**").authenticated().and().httpBasic();
+				.authorizeRequests().antMatchers("/pronix/**").permitAll().and().csrf().disable();
 //				.defaultSuccessUrl("/pronix/getAllRoles");
 	}
 
